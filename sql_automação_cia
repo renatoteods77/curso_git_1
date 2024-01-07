@@ -1,0 +1,87 @@
+@ -0,0 +1,85 @@
+CREATE TABLE P1 (
+    R_E NUMBER PRIMARY KEY, -- Alterado de ID para RE
+    Nome VARCHAR2(255),
+    Nome_De_Guerra VARCHAR2(50),
+    Patente VARCHAR2(50),
+    Registro_Funcional VARCHAR2(20),
+    Registro_Cnh_E_Categoria VARCHAR2(20),
+    Unidade VARCHAR2(100),
+    Treinamentos VARCHAR2(255),
+    Especializacoes VARCHAR2(255),
+    Data_De_Nascimento DATE,
+    Endereco VARCHAR2(255),
+    Telefone VARCHAR2(20)
+);
+
+CREATE TABLE Escala_De_Servico (
+    RE NUMBER PRIMARY KEY, -- Alterado de ID para RE
+    Data DATE,
+    Turno VARCHAR2(50),
+    Patente VARCHAR2(50),
+    Cpp VARCHAR2(50),
+    Vtr VARCHAR2(50),    
+    Horario_Inicio TIMESTAMP,
+    Horario_Fim TIMESTAMP,
+    Tipo_De_Servico VARCHAR2(100)
+);
+
+CREATE TABLE P3_Ocorrencias (
+    RE NUMBER PRIMARY KEY, -- Alterado de ID para RE
+    Data DATE,
+    Descricao VARCHAR2(1000),
+    Natureza VARCHAR2(100),
+    Local VARCHAR2(255),
+    Policiais_Envolvidos VARCHAR2(255), -- Pode ser uma lista de IDs de policiais envolvidos
+    Tipo_De_Ocorrencia VARCHAR2(50)
+    );
+
+CREATE TABLE P4_Viaturas (
+    Prefixo NUMBER PRIMARY KEY, -- Alterado de ID para Prefixo
+    Marca VARCHAR2(100),
+    Modelo VARCHAR2(100),
+    Placa VARCHAR2(20),
+    Ano_De_Fabricacao NUMBER(4),
+    Status VARCHAR2(50),
+    Unidade_Associada VARCHAR2(100)
+);	
+
+
+desc nome_da_tabela; ( comando para ver as estrutura das tabelas)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+drop TABLE policiais column 'EU_IA' 'NOME' 'TELEFONE';
+		INSERT INTO policiais (id, nome, telefone) VALUES ('9910006', 'Renato', '980380000');
+			SELECT * FROM policiais WHERE id = 9910006;
+
+		ALTER TABLE policiais RENAME COLUMN 'EU_IA' TO 'RE';
+ALTER TABLE policiais ADD RE;
+
+INSERT INTO policiais (patente, catergoria_cnh) VALUES ('cabo', 'AB');
+
+UPDATE nome_da_tabela SET RE = EU_IA;
+
+ALTER TABLE nome_da_tabela DROP COLUMN EU_IA;
+SELECT * FROM POLICIAIS;
+
+INSERT INTO policiais (patente, categoria_cnh, endereco_residencial, estagio_atualizacao_profissional,
+    exame_medico, data_ferias)
+    VALUES ('id','nome','telefone', 'CABO', 'AB', 'AV PADRE ARLINDO VIEIRA', TO_DATE('991000-6', 'Renato', '98038-0000','2023-04-12',
+    'YYYY-MM-DD'), 
+    TO_DATE('2250-05-20', 'YYYY-MM-DD'), TO_DATE('2026-05-19', 'YYYY-MM-DD'));
+------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE policiaisCIA (
+  TELEFONE NUMBER,
+  NOME VARCHAR2(50) NOT NULL,
+  TRABALHO VARCHAR2(50),
+  PATENTE NUMBER,
+  DIA_DE_INGRESSO DATE,
+  RE NUMBER(7,2),
+  EAP NUMBER(7,2),
+  PELOTAO NUMBER,
+  CONSTRAINT pk_policiaisCIA PRIMARY KEY (TELEFONE)
+);
+----------------------------------------------------------------------------------------------------------------------------------
+

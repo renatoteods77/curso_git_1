@@ -1,0 +1,96 @@
+## Bing
+Criar um aplicativo front-end completo é um processo extenso que envolve várias etapas, incluindo design de interface, programação front-end e integração com o banco de dados back-end. Embora eu não possa construir um aplicativo real, posso fornecer um exemplo de como o código front-end pode ser estruturado usando HTML, CSS e JavaScript para interagir com as tabelas do banco de dados Oracle que discutimos. Aqui está um esboço básico:
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Gerenciamento da Polícia Militar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        label, input, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Gerenciamento da Polícia Militar</h1>
+
+        <!-- Seção de formulário para adicionar novos registros -->
+        <div class="form-section">
+            <h2>Adicionar Novo Policial</h2>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <label for="patente">Patente:</label>
+            <input type="text" id="patente" name="patente">
+            <label for="registro">Registro Funcional:</label>
+            <input type="text" id="registro" name="registro">
+            <button id="addPolicial">Adicionar Policial</button>
+        </div>
+
+        <!-- Tabela para exibir dados dos policiais -->
+        <table id="tabelaPoliciais">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Patente</th>
+                    <th>Registro Funcional</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os dados serão inseridos aqui via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // JavaScript para interagir com o banco de dados e atualizar a interface
+        document.getElementById('addPolicial').addEventListener('click', function() {
+            // Aqui você coletaria os dados do formulário
+            // e enviaria uma solicitação ao servidor para adicionar o novo policial ao banco de dados
+            // Após a confirmação do servidor, você atualizaria a tabela na interface
+        });
+
+        // Função para carregar dados dos policiais e exibir na tabela
+        function carregarPoliciais() {
+            // Enviar solicitação ao servidor para obter os dados dos policiais
+            // Atualizar a tabela com os dados recebidos
+        }
+
+        // Inicializar o aplicativo carregando os dados existentes
+        carregarPoliciais();
+    </script>
+</body>
+</html>
+
+Este é um exemplo simplificado de como um aplicativo front-end pode ser estruturado para interagir com as tabelas de um banco de dados Oracle. Na prática, você precisaria de um servidor back-end para processar as solicitações, realizar operações no banco de dados e retornar os dados para o front-end. Frameworks modernos como Angular, React ou Vue.js também podem ser usados para criar interfaces mais dinâmicas e interativas.
